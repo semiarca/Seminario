@@ -1,0 +1,45 @@
+
+swiper-container{
+    width: 100%;
+    height: 100%;
+  }
+  swiper-slide{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  }
+  .avatar{
+    --border-radius: 0%;
+  }
+  
+  .h1{
+    font-family: 'Impact', sans-serif; 
+    //color: grey; 
+    text-align: left; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+  
+  }
+  
+  .multicolor {
+    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+      color: transparent;
+    display: inline-block;
+  }
+  
+   
+  .card{
+    font-family: 'Impact', sans-serif; 
+    color: black; 
+    text-align: justify; 
+    letter-spacing: 1px;// controlar los espacios entre textos
+    
+  }
+  
+  .sub{
+    font-family: bradley Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: red;
+    text-align: left;
+  }
