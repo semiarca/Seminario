@@ -16,30 +16,87 @@ swiper-container{
   
   .h1{
     font-family: 'Impact', sans-serif; 
-    //color: grey; 
+    color: grey; 
     text-align: left; 
     text-transform: uppercase; 
     letter-spacing: 2px;
-  
+    border-radius: 5px;
+    margin-bottom: 5px;
   }
-  
-  .multicolor {
-    background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-      color: transparent;
-    display: inline-block;
-  }
-  
-   
+  .h2 {
+    font-family: 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+    font-size: 2 em; // ajusto el tamaño 
+    color: #D11E35; 
+    text-align: left; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    margin-bottom: 5px; 
+}
+
+.h3{
+
+  font-family:  'Laika', 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em; // ajusto el tamaño 
+  color: grey; 
+  text-align: left; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-bottom: 5px; 
+}
+.garza{
+  font-family: 'CineFont', 'Bloodcrowc', 'Impact', 'Arial Narrow Bold', sans-serif;
+  font-size: 1.5em; // ajusto el tamaño 
+  color: gray; 
+  text-align: justify; 
+  letter-spacing: 1px;// controlar los espacios entre textos
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-bottom: 5px; 
+
+}
+     
   .card{
     font-family: 'Impact', sans-serif; 
     color: black; 
     text-align: justify; 
     letter-spacing: 1px;// controlar los espacios entre textos
-    
+    display: inline-block;
+    border: 2.5px ;
   }
   
-  .sub{
+  .sub{ // subtitulos
     font-family: bradley Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: red;
     text-align: left;
   }
+
+.img{
+  display: block;
+  margin: auto;
+  border: 2.5px ;
+  height: 150px;
+  width: 250px;
+  
+}
+.icono {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+
+.menu {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+button {
+  color: white;
+  margin-right: 10px;
+}
+
+

@@ -1,28 +1,50 @@
 
-<!--<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title> BoletApp </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
+<!-- cabezera-->
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start"> <!--colcar el texto del lado izquierdo -->
       <ion-menu-button autoHide="false"></ion-menu-button>
       <!-- agregar un botón que abre y cierra un menú lateral, false es
          para evitar que se oculte automaticamente -->
+
     </ion-buttons>
     <ion-title class="">
       BoletApp
     </ion-title>
     <ion-buttons slot="end">
-      <!-- agregar botones  -->
-      <ion-icon name="search"></ion-icon>
+      <!-- agregar botones a la barra de arriba -->
+      <ion-icon name="person-outline"></ion-icon>
+      <ion-icon name="cart"></ion-icon>
+            
     </ion-buttons>
 
   </ion-toolbar>
 </ion-header>
 
+<!-- menu desplegable-->
+<ion-menu contentId="main-content" class="">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title class="menu">Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-icon (click)="goHome()" name="home" class="icono"></ion-icon> <!-- Boton de regresar-->
+    <span>Home</span>
+  </ion-content>
+</ion-menu>
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">  </ion-content>
+</div>
+<!------------------------------------->
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -31,60 +53,103 @@
     </ion-toolbar>
   </ion-header>
 
-  <swiper-container
-  [loop]="true"
-  [pagination]="true">
+  <swiper-container [loop]="true" [pagination]="true">
 
+
+    <!--aca empiezan los slide 1-->
+    <swiper-slide>
+   <!--   <ion-content class="login">
+       <ion-button (click)=" goHome()">Regresar</ion-button>
+         
+      </ion-content> -->
+      <ion-card >
+        
+      </ion-card>
+      
+
+      
+
+    </swiper-slide>
+
+       
+
+    <!-- Demon Slayer--slaidr 2-->
+    <swiper-slide>
+
+      <ion-card class="card">
+        <img class="img" src="assets/img/2.png" alt="">
+        
+        <ion-card-header>
+          <h1 class="h2"> Demon Slayer</h1>
+          <ion-card-subtitle class="sub">2 DE MARZO SOLO EN CINES</ion-card-subtitle>
+        </ion-card-header>
+  
+      <ion-card-content class="card">
+        Secuela del anime "Kimetsu no Yaiba"
+        Animación. Aventuras. Fantástico. Acción. Thriller.Drama | Monstruos. Trenes / Metros. 
+        Animación para adultos. Manga. 
+      </ion-card-content>
+
+      </ion-card>
+      <ion-content>
+
+        <!-- Botón sólido de Ionic -->
+        <ion-button expand="block">Agregar al carro</ion-button>
+      </ion-content>
+
+
+    </swiper-slide>
+
+    <!-- El niño y la garza- Slide 3-->
+    <swiper-slide>
+      <ion-card class="card">
+        <img class="img" src="assets/img/niño2.jpeg" alt="">
+      
+    
+      <ion-card-header>
+        <h1 class="h2">El niño y la Garza</h1>
+        <ion-card-subtitle class="sub">Estreno: 25-Ene-2024</ion-card-subtitle>
+      </ion-card-header>
+    
+      <ion-card-content class="card">
+        Un joven llamado Mahito tras perder a su madre se aventura en un mundo
+        donde habitan vivos y muertos,
+        un lugar fantástico donde la vida encuentra un nuevo comienzo.
+      </ion-card-content>
+       
+      </ion-card>  
+      <ion-content>
+        <!-- Botón sólido -->
+        <ion-button expand="block">Agregar al carro</ion-button>
+      </ion-content>
+    
+    
+    </swiper-slide>
+
+    <!--Naruto-- slide 4-->
     <swiper-slide>
       <ion-card>
-        <img src="assets/img/imagen1.png" alt="" />
+        <img class="img" src="assets/img/imagen1.png" alt="" />
         <ion-card-header>
           <h1 class="h1">Proximamente</h1>
           <ion-card-subtitle class="sub">BoletApp te la tiene</ion-card-subtitle>
         </ion-card-header>
-    
+
         <ion-card-content class="card">
           Para evitar que un ninja reviva a un demonio poderoso que podría destruir el mundo,
           Naruto se une a una joven sacerdotisa, aun cuando ella predice su muerte.
         </ion-card-content>
       </ion-card>
-
-      <ion-footer>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-content>
-
-              <!-- Botón sólido de Ionic -->
-              <ion-button expand="full" color="primary">Botón Sólido</ion-button>
-          
-            </ion-content>
-          </ion-buttons>
-         
-        </ion-toolbar>
-      </ion-footer>
-
-    
-    </swiper-slide>
-
-    <swiper-slide>Slide 2
-      <h1 class="h1"> PreventApp </h1>
-      <p></p>
-      <img src="https://i.blogs.es/bc1dd2/naruto/650_1200.png" alt="">
-        
       <ion-content>
-
-        <!-- Botón sólido de Ionic -->
-        <ion-button expand="full" color="primary">Botón Sólido</ion-button>
-    
+        <!-- Botón sólido -->
+        <ion-button expand="block">Agregar al carro</ion-button>
       </ion-content>
 
+
     </swiper-slide>
 
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
-    <swiper-slide>Slide 6</swiper-slide>
-  </swiper-container>
- 
-</ion-content>
+<!--------------------------->
 
+
+  </swiper-container>
+</ion-content>
