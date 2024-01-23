@@ -6,18 +6,23 @@ import { Router } from '@angular/router';
   templateUrl: './intro.page.html',
   styleUrls: ['./intro.page.scss'],
 })
-export class IntroPage implements OnInit {
+export class IntroPage {
 
   constructor( private router: Router,
     ) { }
 
   ngOnInit() {
   }
+  ionViewDidEnter(){
+    console.log('Entre a la Intro');
+  }
+
   goHome(){
   console.log("go home"); 
   this.router.navigateByUrl('/home');
   
    }
+   
 }
 
 //2.Crear un boton en intro para omitir y regresar al home (tarea)
