@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage-angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+
 // colocar aca el vector
 
 // metodo predeterminado de las clases, en el se crean unos parametros
@@ -19,5 +20,7 @@ export class HomePage {
   this.storage.set('mostraIntro',true);
 
    }
+
+   
 }
 

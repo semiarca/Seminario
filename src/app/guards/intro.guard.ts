@@ -12,7 +12,7 @@ export class IntroGuard implements CanActivate {
     private storage: Storage){}
   
   async canActivate() {
-    const mostreIntro= await this.storage.get('mostreLaIntro');
+    const mostreIntro= await this.storage.get('mostraIntro');
     if(mostreIntro){
       return true;
     }else{
@@ -21,6 +21,8 @@ export class IntroGuard implements CanActivate {
     }
    
   }
+
+  
 
   
 }

@@ -53,101 +53,43 @@
     </ion-toolbar>
   </ion-header>
 
-  <swiper-container [loop]="true" [pagination]="4">
+  <swiper-container 
+  [loop]="true" 
+  [pagination]="true" [slidesPerView]= "1">
+  <!-- Loop en true me lleva al ultimo slide y da la vueta al primero
+  el false ,llega al ultimo y no pasa al primero.
+
+  los puntos que salen abajo del slide son el pagination
+  -->
 
 
-    <!--aca empiezan los slide 1-->
-    <swiper-slide>
-   <!--   <ion-content class="login">
-       <ion-button (click)=" goHome()">Regresar</ion-button>
-         
-      </ion-content> -->
-      <ion-card >
-        
-      </ion-card>
-      
-
-      
-
-    </swiper-slide>
-
-       
-
-    <!-- Demon Slayer--slaidr 2-->
-    <swiper-slide>
-
-      <ion-card class="card">
-        <img class="img" src="assets/img/2.png" alt="">
-        
-        <ion-card-header>
-          <h1 class="h2"> Demon Slayer</h1>
-          <ion-card-subtitle class="sub">2 DE MARZO SOLO EN CINES</ion-card-subtitle>
+    <!--aca empiezan los slide -->
+          
+    <!-- Demon Slayer--slides-->
+    <swiper-slide *ngFor="let slide of slides; let i = index">
+    
+      <ion-card class="card" class={{slide.class}}>
+        <img class="img" src={{slide.image}}>
+    
+        <ion-card-header >
+          <h1 class="h2"> {{slide.title}}</h1>
+          <ion-card-subtitle class="sub">{{slide.subtitle}}</ion-card-subtitle>
         </ion-card-header>
-  
-      <ion-card-content class="card">
-        Secuela del anime "Kimetsu no Yaiba"
-        Animación. Aventuras. Fantástico. Acción. Thriller.Drama | Monstruos. Trenes / Metros. 
-        Animación para adultos. Manga. 
-      </ion-card-content>
-
+    
+        <ion-card-content class="card">
+          {{slide.description}}
+        </ion-card-content>
+    
       </ion-card>
       <ion-content>
-
+    
         <!-- Botón sólido de Ionic -->
         <ion-button expand="block">Agregar al carro</ion-button>
       </ion-content>
-
-
-    </swiper-slide>
-
-    <!-- El niño y la garza- Slide 3-->
-    <swiper-slide>
-      <ion-card class="card">
-        <img class="img" src="assets/img/niño2.jpeg" alt="">
-      
-    
-      <ion-card-header>
-        <h1 class="h2">El niño y la Garza</h1>
-        <ion-card-subtitle class="sub">Estreno: 25-Ene-2024</ion-card-subtitle>
-      </ion-card-header>
-    
-      <ion-card-content class="card">
-        Un joven llamado Mahito tras perder a su madre se aventura en un mundo
-        donde habitan vivos y muertos,
-        un lugar fantástico donde la vida encuentra un nuevo comienzo.
-      </ion-card-content>
-       
-      </ion-card>  
-      <ion-content>
-        <!-- Botón sólido -->
-        <ion-button expand="block">Agregar al carro</ion-button>
-      </ion-content>
-    
     
     </swiper-slide>
 
-    <!--Naruto-- slide 4-->
-    <swiper-slide>
-      <ion-card>
-        <img class="img" src="assets/img/imagen1.png" alt="" />
-        <ion-card-header>
-          <h1 class="h1">Proximamente</h1>
-          <ion-card-subtitle class="sub">BoletApp te la tiene</ion-card-subtitle>
-        </ion-card-header>
-
-        <ion-card-content class="card">
-          Para evitar que un ninja reviva a un demonio poderoso que podría destruir el mundo,
-          Naruto se une a una joven sacerdotisa, aun cuando ella predice su muerte.
-        </ion-card-content>
-      </ion-card>
-      <ion-content>
-        <!-- Botón sólido -->
-        <ion-button expand="block">Agregar al carro</ion-button>
-      </ion-content>
-
-
-    </swiper-slide>
-
+    
 <!--------------------------->
 
 
