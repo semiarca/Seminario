@@ -68,7 +68,7 @@
     <!-- Demon Slayer--slides-->
     <swiper-slide *ngFor="let slide of slides; let i = index">
     
-      <ion-card class="card" class={{slide.class}}>
+      <ion-card class="card" > <!-- class={{slide.class}} dentro de ioncard-->
         <img class="img" src={{slide.image}}>
     
         <ion-card-header >

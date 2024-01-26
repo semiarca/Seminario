@@ -1,0 +1,47 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center ">Login</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-card class="card">
+  <figure class="ion-text-center">
+    <ion-avatar class="avatar">
+      <img src="../../assets/img/login.png" alt="logo" class="logo">
+    </ion-avatar>
+  </figure> 
+  <form [formGroup]="loginForm" >
+    <ion-item>
+      <ion-input label="Email" 
+       labelPlacement="floating"
+       placeholder="Email" 
+       formControlName="email">
+      </ion-input>
+    </ion-item>
+    
+    <!-- Crear campo password -->
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input 
+        placeholder="Password" 
+        formControlName="password" 
+       
+      ></ion-input>
+    </ion-item>
+
+    <!-- Crear validaciones en pantalla -->
+    <ion-button 
+    type="submit" 
+    [disabled]="!loginForm.valid"
+    color="primary"
+    shape="round"
+    expand="full"
+    >Login</ion-button>
+  </form>
+
+  
+
+ 
+  
+</ion-card>

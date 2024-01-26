@@ -20,7 +20,7 @@ export class IntroPage {
     description: "  Secuela del anime Kimetsu no Yaiba Animación. Aventuras. Fantástico. Acción. Thriller.Drama | Monstruos. Trenes |Metros.Animación para adultos. Manga. ",
     title: " Demon Slayer",
     subtitle: "2 DE MARZO SOLO EN CINES", 
-    class: "slide-1",
+    class: " ",
   },
   //tercero  niño garza
   {

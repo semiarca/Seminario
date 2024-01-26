@@ -65,6 +65,8 @@ swiper-container{
     letter-spacing: 1px;// controlar los espacios entre textos
     display: inline-block;
     border: 2.5px ;
+    height: 400px; // altura de la card
+    
   }
   
   .sub{ // subtitulos
@@ -100,6 +102,9 @@ button {
 }
 
 .slide-1{
-  --background: url(../../assets/img/fondo.avif) 0 0/100% 100% no-repeat;
+  --background: 
+  url(../../assets/img/fondo.avif) 0 0/100% 100% no-repeat;
+ 
+  
 }
 
