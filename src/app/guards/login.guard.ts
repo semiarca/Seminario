@@ -3,28 +3,27 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
-
 @Injectable({
   providedIn: 'root'
 })
-export class IntroGuard implements CanActivate {
-  constructor( private router: Router, 
+export class LoginGuard implements CanActivate {
+  constructor(
+    private router: Router, 
     private storage: Storage){}
   
-  async canActivate() {
-    const mostreIntro= await this.storage.get('mostraIntro');
-    if(mostreIntro){
-      console.log('Mostre la intro');
+  
+  async canActivate(){
+    const userLoggeIn= await this.storage.get('userLoggeIn')
+    
+    if(userLoggeIn){
+      console.log(userLoggeIn)
+      console.log('Login correcto');
       return true;
     }else{
-      console.log('No se mostro la intro');
-      this.router.navigateByUrl('/intro');
+      console.log('Login incorrecto');
+      this.router.navigateByUrl('/login');
       return false;
     }
-   
   }
-
-  
-
   
 }

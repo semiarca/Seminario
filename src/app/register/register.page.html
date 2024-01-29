@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title  class="ion-text-center ">Registro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="card card-center "  >
+  <figure class="ion-text-center">
+    <ion-avatar class="avatar"> <!-- crear clase css para centrar el avatar -->
+      <img src="../../assets/img/login.png" alt="logo" class="logo">
+    </ion-avatar>
+  </figure>
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">
+    <ion-item>
+      <ion-input name="bag-outline" label="Email" labelPlacement="floating" placeholder="Email" formControlName="email"
+        autocomplete="email">
+      </ion-input>
+    </ion-item>  
+
+    <ion-item>
+      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"></ion-input>
+    </ion-item> 
+
+    <ion-item>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+    </ion-item> 
+
+    <!-- Colocar campos de password como tipo password -->
+    <ion-item>
+      <ion-input label="password" autocomplete="new-password" placeholder="password" labelPlacement="floating"
+        formControlName="password" value="secreto" type="password">
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña"
+        formControlName="confirmation_password" value="secreto" type="password">
+      </ion-input>
+
+  
+    </ion-item>
+
+ 
+    <ion-button 
+        [disabled]="!registerForm.valid" type="submit" color="danger" 
+        expand="block" shape="round">Registrarse
+    </ion-button>
+  </form>
+</ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">  
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

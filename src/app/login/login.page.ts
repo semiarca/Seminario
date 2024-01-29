@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
- //import { AuthService } from '../services/auth.service';
-//import { NavController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
+import { AuthenticService } from '../services/authentic.service';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -9,14 +10,26 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginPage implements OnInit {
  loginForm: FormGroup;
+  validation_messages = {
+    email: [
+      { type: "required", message: "Campo requerido" },
+      { type: "pattern", message:  "El correo no es valido o ya esta en uso" }
+    ],  
+    // validaciones de mensajes de Password
+    password: [
+      {type: "required",  message: "Campo requerido"},
+      {type: "pattern",   message: "Ingrese una contraseña valida"},
+      {type: "minLength", message: "Debe tener minimo 4 caracteres"},
+      
+    ]
+  }
+ loginMessage: any;
  
-  
-  //Crear validaciones para el password
-
-
-constructor(private formBuilder: FormBuilder
-    //private authService: AuthService,
-  //private navCtrl: NavController
+constructor(
+  private formBuilder: FormBuilder,
+  private navCtrl: NavController,
+  private authenticServe:AuthenticService,
+  private storage: Storage
   ) {
   this.loginForm = this.formBuilder.group({
     email: new FormControl(
@@ -28,23 +41,34 @@ constructor(private formBuilder: FormBuilder
         )
       ])
     ),
-    //Crear validaciones para el password
+    //validaciones para el password
     password: new FormControl(
       "",
       Validators.compose([
         Validators.required,
-        Validators.minLength(8), // Mínimo 8 caracteres
-        Validators.maxLength(20), // Máximo 20 caracteres
-        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/)
-
+        Validators.minLength(4), // Mínimo de caracteres
+        Validators.maxLength(10), // Máximo de caracteres
+        Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]*$/)
       ])
     )
   })
  }
 
-ngOnInit() {
+ ngOnInit() {
+ }
+
+login(login_data: any)
+{
+  console.log(login_data);
+  this.authenticServe.loginUser(login_data).then(res=>{
+  this.loginMessage= res;
+  this.storage.set('userLoggeIn', true);// agrego validacion del login
+  this.navCtrl.navigateForward('/home');
+  
+  }).catch(Error=>{
+    this.loginMessage= Error;
+  });
+  
 }
-
-
 
 }

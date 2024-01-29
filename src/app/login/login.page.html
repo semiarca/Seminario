@@ -1,47 +1,107 @@
-<ion-header  [translucent]="true">
+<ion-header>
   <ion-toolbar color="primary">
-    <ion-title class="ion-text-center ">Login</ion-title>
-    
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" text="" icon="arrow-back"></ion-back-button>
+    </ion-buttons>
+    <ion-title  class="ion-text-center ">Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-card class="card">
+<ion-content>
+
+<ion-card class="card card-center "  >
   <figure class="ion-text-center">
     <ion-avatar class="avatar">
       <img src="../../assets/img/login.png" alt="logo" class="logo">
     </ion-avatar>
   </figure> 
-  <form [formGroup]="loginForm" >
-    <ion-item>
-      <ion-input label="Email" 
-       labelPlacement="floating"
-       placeholder="Email" 
-       formControlName="email">
-      </ion-input>
-    </ion-item>
-    
-    <!-- Crear campo password -->
-    <ion-item>
-      <ion-label>Password</ion-label>
-      <ion-input 
-        placeholder="Password" 
-        formControlName="password" 
-       
-      ></ion-input>
-    </ion-item>
+  <!-- formulario de Email-->
+  <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
 
+    <ion-card>
+      <ion-item>
+        <ion-input 
+         name="bag-outline"
+         label="Email" 
+         labelPlacement="floating"
+         placeholder="Email" 
+         formControlName="email"
+         autocomplete="email" >
+        </ion-input>
+      </ion-item>
+      <!-- validation de mensages del formulario -->
+      <div class="validation-message">
+        <ng-container *ngFor="let validation of validation_messages.email">
+          <div *ngIf="
+          (loginForm.get('email')?.hasError(validation.type) && 
+          loginForm.get('email')?.dirty)
+          ">{{validation.message}}</div>
+        </ng-container>
+      </div>
+
+    </ion-card>
+    <!-- Formulario de password -->
+    <ion-card>
+      <ion-item>
+        
+        <ion-input 
+          label="password"
+          autocomplete="new-password"
+          placeholder="password"
+          labelPlacement="floating"
+          formControlName="password" value="secreto"
+          type="password">
+          
+        </ion-input>
+      </ion-item>
+                <!-- validacion de mensajes de la contraseña-->
+
+          <div class="validation-message">
+            <ng-container *ngFor="let validation of validation_messages.password">
+            <div *ngIf="
+             (loginForm.get('password')?.hasError(validation.type) && 
+                loginForm.get('password')?.dirty)
+             ">{{validation.message}}</div>
+            </ng-container>
+          </div>
+
+    </ion-card>
     <!-- Crear validaciones en pantalla -->
+    
     <ion-button 
-    type="submit" 
-    [disabled]="!loginForm.valid"
-    color="primary"
-    shape="round"
-    expand="full"
-    >Login</ion-button>
+      [disabled]="!loginForm.valid"
+      type="submit" 
+      color="danger" 
+      expand="block"
+      shape="round"
+     >Login
+    </ion-button>
+
+    <ion-button [routerLink]="['/register']"
+    
+      type="submit" 
+      color="danger" 
+      expand="block"
+      shape="round"
+    >Registrarse</ion-button>
+
+    <div class="forgot-password">
+      <a href="#">olvidaste la contrseña?</a>
+  </div>
+  
   </form>
-
+  <div class="validation-message ">
+     {{loginMessage}}
+  </div>
   
-
  
-  
-</ion-card>
+ </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end">
+      
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

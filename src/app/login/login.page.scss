@@ -2,13 +2,54 @@
     margin: auto;
 }
 
-.card{
-    font-family: 'Impact', sans-serif; 
-    color: black; 
-    text-align: justify; 
-    letter-spacing: 1px;// controlar los espacios entre textos
+.card {
+    font-family: 'Impact', sans-serif;
+    color: black;
+    text-align: justify;
+    letter-spacing: 1px;
     display: inline-block;
-    border: 2.5px ;
-    height: 400px; // altura de la card
-    
+    border: 0.5px solid groove;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // sombra
+    height: auto;
+    width: 300px;
+    margin: 7px;
+    background-color: #f0f0f0;
+    position: relative;
+
+}
+
+
+.validation-message {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    color: rgb(125, 120, 120);
+    font-weight:lighter;
+    font-family: 'Segoe UI', Tahoma;
+}
+/*
+.background-gif {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../../assets/img/gif.gif');
+    background-size: cover;
+    z-index: -1;
+    <div class="background-gif" class="background-gif"></div>
   }
+  */
+
+  /* styles.css o styles.scss */
+
+  .forgot-password {
+    position: relative;
+    bottom: 0%;
+    font: small-caps 100%/200% serif;
+}
+

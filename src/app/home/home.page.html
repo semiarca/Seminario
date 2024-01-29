@@ -1,2 +1,31 @@
-Hola soy el Homepage
-<ion-button (click)="goToIntro()">Ver Intro</ion-button>
+<ion-header [translucent]="true">
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start"> <!--colcar el texto del lado izquierdo -->
+        <ion-menu-button autoHide="false"></ion-menu-button>
+        <!-- agregar un botón que abre y cierra un menú lateral, false es
+           para evitar que se oculte automaticamente -->
+  
+      </ion-buttons>
+      <ion-title class="">
+        BoletApp
+      </ion-title>
+      <ion-buttons slot="end">
+        <!-- agregar botones a la barra de arriba -->
+        <ion-icon name="person-outline"></ion-icon>
+        <ion-icon name="cart"></ion-icon>
+              
+      </ion-buttons>
+  
+    </ion-toolbar>
+  </ion-header>
+  
+
+
+<p class="h1"> soy el Homepage</p>
+
+
+<ion-button (click)="goToIntro()" >Ver Intro</ion-button>
+
+
+
+
