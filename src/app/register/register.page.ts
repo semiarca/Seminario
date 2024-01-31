@@ -63,6 +63,26 @@ constructor(
         ])
       ),
 
+      //validaciones para el name
+    name: new FormControl(
+      "",
+      Validators.compose([
+        Validators.required,
+        Validators.maxLength(20), // Máximo de caracteres
+        Validators.pattern(/^[a-zA-Z\s']*$/)
+      ])
+    ),
+
+    //validaciones para el last_name
+    last_name: new FormControl(
+      "",
+      Validators.compose([
+        Validators.required,
+        Validators.maxLength(50), // Máximo de caracteres
+        Validators.pattern(/^[a-zA-Z\s'-]*$/)
+      ])
+    ),
+
       //validaciones para el password
     password: new FormControl(
       "",
@@ -85,44 +105,27 @@ constructor(
       ])
     ),
 
-    //validaciones para el name
-    name: new FormControl(
-      "",
-      Validators.compose([
-        Validators.required,
-        Validators.maxLength(20), // Máximo de caracteres
-        Validators.pattern(/^[a-zA-Z\s']*$/)
-      ])
-    ),
-
-    //validaciones para el last_name
-    last_name: new FormControl(
-      "",
-      Validators.compose([
-        Validators.required,
-        Validators.maxLength(50), // Máximo de caracteres
-        Validators.pattern(/^[a-zA-Z\s'-]*$/)
-      ])
-    )
+    
 
    })
   }
   ngOnInit() {
   }
- 
-  register(register_data: any){
-    {
+
+  register(register_data: any) {
+
+    if (register_data.password == register_data.confirmation_password) {
       console.log(register_data);
-      this.authenticServe.loginUser(register_data).then(res=>{
-      this.registerMessage= res;
-      this.storage.set('userLoggeIn', true);// agrego validacion del login
-      this.navCtrl.navigateForward('/home');
-      
-      }).catch(Error=>{
-        this.registerMessage= Error;
+      this.authenticServe.loginUser(register_data).then(res => {
+        this.registerMessage = res;
+        this.storage.set('userLoggeIn', true);// agrego validacion del login
+        this.navCtrl.navigateForward('/login');
+
+      }).catch(Error => {
+        this.registerMessage = Error;
       });
-      
-    }
+
+    } else { console.log('no coinciden las contraseñas') }
 
   }
 

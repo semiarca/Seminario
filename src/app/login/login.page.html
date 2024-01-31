@@ -11,22 +11,21 @@
 
 <ion-card class="card card-center "  >
   <figure class="ion-text-center">
-    <ion-avatar class="avatar">
+      <ion-avatar class="avatar">
       <img src="../../assets/img/login.png" alt="logo" class="logo">
     </ion-avatar>
-  </figure> 
+  </figure>
   <!-- formulario de Email-->
   <form [formGroup]="loginForm" (ngSubmit)="login(loginForm.value)">
 
     <ion-card>
       <ion-item>
-        <ion-input 
-         name="bag-outline"
-         label="Email" 
-         labelPlacement="floating"
-         placeholder="Email" 
-         formControlName="email"
-         autocomplete="email" >
+        <ion-input name="email" label="Email" labelPlacement="floating" 
+                  placeholder="Email" formControlName="email" autocomplete="email">
+          <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide">
+            <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon>
+          </ion-button>
         </ion-input>
       </ion-item>
       <!-- validation de mensages del formulario -->
@@ -44,14 +43,13 @@
     <ion-card>
       <ion-item>
         
-        <ion-input 
-          label="password"
-          autocomplete="new-password"
-          placeholder="password"
-          labelPlacement="floating"
-          formControlName="password" value="secreto"
-          type="password">
-          
+        <ion-input label="password" autocomplete="new-password" placeholder="password" labelPlacement="floating"
+          formControlName="password" value="secreto" type="password">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" aria-label="Show/hide"  >
+            <ion-icon slot="icon-only" name="eye" aria-hidden="true" (click)="eye()"></ion-icon>
+          </ion-button>
+        
         </ion-input>
       </ion-item>
                 <!-- validacion de mensajes de la contraseña-->
@@ -68,22 +66,14 @@
     </ion-card>
     <!-- Crear validaciones en pantalla -->
     
-    <ion-button 
-      [disabled]="!loginForm.valid"
-      type="submit" 
-      color="danger" 
-      expand="block"
-      shape="round"
-     >Login
+    <ion-button [disabled]="!loginForm.valid" type="submit" color="danger"
+              expand="block" shape="round">Login
     </ion-button>
-
-    <ion-button [routerLink]="['/register']"
-    
-      type="submit" 
-      color="danger" 
-      expand="block"
-      shape="round"
-    >Registrarse</ion-button>
+<!-- Boton del registro-->
+    <ion-button [routerLink]="['/register']" 
+          type="submit" color="danger" 
+           expand="block" shape="round">Registrarse
+    </ion-button>
 
     <div class="forgot-password">
       <a href="#">olvidaste la contrseña?</a>

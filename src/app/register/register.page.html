@@ -22,29 +22,63 @@
       </ion-input>
     </ion-item>  
 
+    <!-- validation de mensages del formulario -->
+    <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="
+        (registerForm.get('email')?.hasError(validation.type) && 
+        registerForm.get('email')?.dirty)
+        ">{{validation.message}}</div>
+      </ng-container>
+    </div>
+
     <ion-item>
-      <ion-input label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"></ion-input>
+      <ion-input  label="Nombre" labelPlacement="floating" placeholder="Nommbre" formControlName="name"
+       autocomplete="name" >
+
+      </ion-input>
     </ion-item> 
 
     <ion-item>
-      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"></ion-input>
+      <ion-input label="Apellido" labelPlacement="floating" placeholder="Apellido" formControlName="last_name"
+      autocomplete="name">
+      </ion-input>
     </ion-item> 
 
     <!-- Colocar campos de password como tipo password -->
     <ion-item>
-      <ion-input label="password" autocomplete="new-password" placeholder="password" labelPlacement="floating"
-        formControlName="password" value="secreto" type="password">
+      <ion-input label="password"  placeholder="password" labelPlacement="floating"
+        formControlName="password" value="secreto" type="password"  >
       </ion-input>
     </ion-item>
+     <!-- validacion de mensajes de la contraseña-->
+
+     <div class="validation-message">
+      <ng-container *ngFor="let validation of validation_messages.password">
+      <div *ngIf="
+       (registerForm.get('password')?.hasError(validation.type) && 
+          registerForm.get('password')?.dirty)
+       ">{{validation.message}}</div>
+      </ng-container>
+    </div>
 
     <ion-item>
       <ion-input label="Confirme Contraseña" labelPlacement="floating" placeholder="Confirme Contraseña"
-        formControlName="confirmation_password" value="secreto" type="password">
+        formControlName="confirmation_password" value="secreto" type="password" >
+
       </ion-input>
-
-  
+      <!-- validacion de mensajes de confirmation_password-->   
     </ion-item>
-
+    <div class="validation-message">
+      <ng-container  *ngFor=
+      "let validation of validation_messages.confirmation_password">
+      <div *ngIf="(registerForm.get('password')?.value !== registerForm.get('confirmation_password')?.
+                  value && registerForm.get('confirmation_password')?.dirty)
+     
+            ">{{validation.message}}
+      </div>
+      </ng-container>
+    </div>
  
     <ion-button 
         [disabled]="!registerForm.valid" type="submit" color="danger" 

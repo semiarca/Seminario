@@ -22,12 +22,17 @@ export class AuthenticService {
   }
 
   registerUser(Credential: any) {
-    
-
-    
-   
-}
-
+    return new Promise((accept,reject)=>{
+      if(
+           
+        Credential.password=='Seeller1'&& Credential.confirmation_password=='Seeller1'
+      ){
+        accept('Registro exitoso ');
+      }else{
+        reject('Registro fallido');
+      }
+      });
+    }
 
   
 }

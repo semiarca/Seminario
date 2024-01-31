@@ -44,7 +44,7 @@ constructor(
     //validaciones para el password
     password: new FormControl(
       "",
-      Validators.compose([
+        Validators.compose([
         Validators.required,
         Validators.minLength(4), // Mínimo de caracteres
         Validators.maxLength(10), // Máximo de caracteres
@@ -53,8 +53,15 @@ constructor(
     )
   })
  }
-
+// abrir y cerr  eye
  ngOnInit() {
+  
+ }
+ eye(){
+
+  const passwordInput = document.getElementById('password-input') as HTMLInputElement;
+  const passwordType = passwordInput.type === 'password' ? 'text' : 'password';
+  passwordInput.type = passwordType;
  }
 
 login(login_data: any)
