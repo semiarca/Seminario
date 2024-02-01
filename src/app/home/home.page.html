@@ -1,30 +1,32 @@
 <ion-header [translucent]="true">
-    <ion-toolbar color="primary">
-      <ion-buttons slot="start"> <!--colcar el texto del lado izquierdo -->
-        <ion-menu-button autoHide="false"></ion-menu-button>
-        <!-- agregar un botón que abre y cierra un menú lateral, false es
+  <ion-toolbar color="primary">
+    <ion-buttons slot="end"> <!--colcar el texto del lado izquierdo -->
+      <ion-menu-button autoHide="false">
+           <!-- agregar un botón que abre y cierra un menú lateral, false es
            para evitar que se oculte automaticamente -->
+         
+      </ion-menu-button>
+    </ion-buttons> 
+    <ion-title class="">BoletApp </ion-title>
+
+  </ion-toolbar>
+</ion-header>
   
-      </ion-buttons>
-      <ion-title class="">
-        BoletApp
-      </ion-title>
-      <ion-buttons slot="end">
-        <!-- agregar botones a la barra de arriba -->
-        <ion-icon name="person-outline"></ion-icon>
-        <ion-icon name="cart"></ion-icon>
-              
-      </ion-buttons>
-  
-    </ion-toolbar>
-  </ion-header>
-  
+<ion-content> 
+  <ion-content>
+    <swiper-container
+    [pagination]="true"
+    [slidesPerView]="3"
+    >
+        <swiper-slide *ngFor="let slide of event_list">
+            <img src="{{slide.image}}">
+        </swiper-slide>
+    </swiper-container>
 
+</ion-content>
 
-<p class="h1"> soy el Homepage</p>
-
-
-<ion-button (click)="goToIntro()" >Ver Intro</ion-button>
+ 
+</ion-content>
 
 
 

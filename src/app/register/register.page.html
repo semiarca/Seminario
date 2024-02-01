@@ -1,7 +1,9 @@
-<ion-header>
+<ion-header [translucent]="true">
   <ion-toolbar color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" text="" icon="arrow-back"></ion-back-button>
+      <ion-button (click)="goTologin()">
+         <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </ion-button>
     </ion-buttons>
     <ion-title  class="ion-text-center ">Registro</ion-title>
   </ion-toolbar>
@@ -12,7 +14,7 @@
   <ion-card class="card card-center "  >
   <figure class="ion-text-center">
     <ion-avatar class="avatar"> <!-- crear clase css para centrar el avatar -->
-      <img src="../../assets/img/login.png" alt="logo" class="logo">
+      <img src="../../assets/img/log.png" alt="logo" class="logo">
     </ion-avatar>
   </figure>
   <form [formGroup]="registerForm" (ngSubmit)="register(registerForm.value)">

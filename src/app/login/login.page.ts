@@ -78,4 +78,8 @@ login(login_data: any)
   
 }
 
+goToRegister(){
+  this.navCtrl.navigateForward("/register")
+}
+
 }

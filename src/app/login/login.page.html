@@ -1,8 +1,12 @@
 <ion-header>
   <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" text="" icon="arrow-back"></ion-back-button>
-    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToRegister()">
+        <ion-icon name="arrow-forward-outline"></ion-icon>
+     </ion-button>
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons> 
+   
     <ion-title  class="ion-text-center ">Login</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +16,7 @@
 <ion-card class="card card-center "  >
   <figure class="ion-text-center">
       <ion-avatar class="avatar">
-      <img src="../../assets/img/login.png" alt="logo" class="logo">
+      <img src="../../assets/img/log.png" alt="logo" class="logo">
     </ion-avatar>
   </figure>
   <!-- formulario de Email-->

@@ -4,6 +4,7 @@ import { NavController } from '@ionic/angular';
 import { AuthenticService } from '../services/authentic.service';
 import { Storage } from '@ionic/storage-angular';
 import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -35,7 +36,7 @@ validation_messages = {
   ],
   confirmation_password: [
     {type: "required",  message: "Campo requerido"},
-    {type: "pattern",   message: "No coincide con la contraseña"},
+    {type: "pattern",   message: "No coincide"},
     {type: "minLength", message: "Debe tener minimo 4 caracteres"},
     
   ]
@@ -48,7 +49,8 @@ constructor(
   private navCtrl: NavController,
   private storage: Storage,
   private authenticServe:AuthenticService,
-  private router:Router
+  private router:Router,
+  private alertcontroller:AlertController
 
 
   ) {
@@ -125,12 +127,25 @@ constructor(
         this.registerMessage = Error;
       });
 
-    } else { console.log('no coinciden las contraseñas') }
+    } else { this.presentAlert();console.log('no coinciden las contraseñas')  }
 
   }
 
- 
-  
+  async presentAlert() {
+    const alert = await this.alertcontroller.create({
+      header: 'Atencion',
+      message: 'Contraseña invalida',
+      buttons: ['OK'],
+      cssClass: 'alert',
+    });
+
+    await alert.present();
+  }
+
+  goTologin(){
+
+    this.navCtrl.navigateBack("/login")
+  }
 
 }
 
