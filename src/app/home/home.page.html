@@ -1,14 +1,11 @@
+<!--cabezera-->
 <ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-buttons slot="end"> <!--colcar el texto del lado izquierdo -->
-      <ion-menu-button autoHide="false">
-           <!-- agregar un botón que abre y cierra un menú lateral, false es
-           para evitar que se oculte automaticamente -->
-         
+    <ion-buttons slot="end">
+      <ion-menu-button autoHide="false">   
       </ion-menu-button>
     </ion-buttons> 
-    <ion-title class="">BoletApp </ion-title>
-
+    <ion-title class="ion-text-center" >BoletApp </ion-title>
   </ion-toolbar>
 </ion-header>
   
@@ -19,6 +16,19 @@
     [slidesPerView]="3"
     >
         <swiper-slide *ngFor="let slide of event_list">
+            <img src="{{slide.image}}">
+        </swiper-slide>
+    </swiper-container>
+
+</ion-content>
+
+<ion-content> 
+  <ion-content>
+    <swiper-container
+    [pagination]="true"
+    [slidesPerView]="3"
+    >
+        <swiper-slide *ngFor="let slide of category_list">
             <img src="{{slide.image}}">
         </swiper-slide>
     </swiper-container>

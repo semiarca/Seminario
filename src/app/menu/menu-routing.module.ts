@@ -15,17 +15,23 @@ const routes: Routes = [
         import("../home/home.module").then(m => m.HomePageModule)
       },
       {
-      path:"",
+      path:"login",
       loadChildren:()=>
       import("../login/login.module").then(m =>m.LoginPageModule)
 
       },
       {
 
-      path:"",
+      path:"intro",
       loadChildren:()=>
-      import("../register/register.module").then(m =>m.RegisterPageModule)
-      }
+      import("../intro/intro.module").then(m =>m.IntroPageModule)
+      },
+      {
+       path:"register",
+       loadChildren:()=>
+       import("../register/register.module").then(m=>m.RegisterPageModule)
+        
+      },
       
 
     ]

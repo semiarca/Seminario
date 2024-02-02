@@ -70,7 +70,7 @@ login(login_data: any)
   this.authenticServe.loginUser(login_data).then(res=>{
   this.loginMessage= res;
   this.storage.set('userLoggeIn', true);// agrego validacion del login
-  this.navCtrl.navigateForward('/home');
+  this.navCtrl.navigateForward('/menu/home');
   
   }).catch(Error=>{
     this.loginMessage= Error;
@@ -78,8 +78,6 @@ login(login_data: any)
   
 }
 
-goToRegister(){
-  this.navCtrl.navigateForward("/register")
-}
+
 
 }

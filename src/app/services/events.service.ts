@@ -27,15 +27,14 @@ export class EventsService {
   //Obtener 1 categoria " get hacia /categories/:id"
 
   getCategorias() {
-    return fetch(`${this.urlServer}/categorias`).then(
-      response => response.json()
-    );
+    return fetch(`${this.urlServer}/category`).then(
+      response => response.json());
   }
 
   getCategoryId(id: number) {
-    return fetch(`${this.urlServer}/categorias/${id}`).then(
-      response => response.json()
-    );
+    return fetch(`${this.urlServer}/category/${id}`).then(
+      response => response.json());
+      
   }
 
 }

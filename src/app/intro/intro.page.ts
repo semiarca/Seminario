@@ -12,7 +12,11 @@ export class IntroPage {
  slides = [
   //primer slide
   {
-    
+    image: "../../assets/img/one.jpg",
+    description: "  En esta película aparecen Luffy, Zoro, Usopp y Nami. Esta película se ubicaría después del Episodio 18 (De hecho, en el final de la película, se puede ver que Sanji todavía está en el Baratie). ",
+    title: " One Piece",
+    subtitle: "Estreno: 25-Ene-2024", 
+    class: " ",
   },
   //segundo kimetsu
   {

@@ -21,8 +21,20 @@ export class MenuPage implements OnInit {
     this.menu.close();
   }
   logout(){
-    this.navController.navigateRoot("/login")
+    this.navController.navigateRoot("/menu/login")
   }
-
+  
+  goToRegister(){
+    this.navController.navigateForward("/menu/register")
+  }
+  goHome(){
+    this.navController.navigateBack('/menu/home')
+  }
+  goIntro(){
+    this.navController.navigateRoot('/menu/intro')
+  }
+  goLogin(){
+    this.navController.navigateRoot('/menu/login')
+  }
 }
 

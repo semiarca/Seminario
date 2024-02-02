@@ -1,7 +1,7 @@
 <ion-split-pane contentId="content">
   <ion-menu contentId="content" side="end">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="primary">
         <ion-title>Menu</ion-title>
         <ion-buttons slot="start">
           <ion-button icon-only (click)="closeMenu()">
@@ -11,14 +11,31 @@
       </ion-toolbar>
     </ion-header>
     <ion-content>
-      <!-- Colocar todo dentro de este item ,  es el que se muestra al abrir -->
+      <!-- Colocar ion list todo dentro de este item ,  es el que se muestra al abrir -->
       <ion-list>
-        <ion-item>
-          Home
+        <ion-item (click)=" goLogin()" >
+          <ion-icon name="person-outline"></ion-icon>
+              Mi cuenta
+        </ion-item>
+
+        <ion-item (click)=" goHome()" >
+          <ion-icon name="home" class="icono" title="Home"> </ion-icon>
+              Home
+        </ion-item>
+
+
+        <ion-item (click)=" goIntro()" >
+          <ion-icon name="cart-outline" class="icono"></ion-icon>
+              Compras
+        </ion-item>
+
+        <ion-item (click)="goToRegister()">
+          <ion-icon name="document-text-outline"></ion-icon>
+              Registro
         </ion-item>
         <ion-item (click)="logout()">
-          <ion-icon name="log-out"></ion-icon>
-          Cerrar Session
+          <ion-icon name="power-sharp"></ion-icon>
+              Cerrar Session
         </ion-item>
       </ion-list>
     </ion-content>

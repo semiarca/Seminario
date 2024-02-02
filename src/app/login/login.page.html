@@ -1,13 +1,12 @@
-<ion-header>
+<!-- cabezera-->
+
+<ion-header [translucent]="true">
   <ion-toolbar color="primary">
-    <ion-buttons slot="end">
-      <ion-button (click)="goToRegister()">
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-     </ion-button>
-      <ion-menu-button autoHide="false"></ion-menu-button>
-    </ion-buttons> 
-   
-    <ion-title  class="ion-text-center ">Login</ion-title>
+      <ion-buttons slot="end">
+          <ion-menu-button autoHide="false">
+          </ion-menu-button>
+      </ion-buttons>
+      <ion-title class="ion-text-center">BoletApp </ion-title> 
   </ion-toolbar>
 </ion-header>
 
@@ -74,7 +73,7 @@
               expand="block" shape="round">Login
     </ion-button>
 <!-- Boton del registro-->
-    <ion-button [routerLink]="['/register']" 
+    <ion-button [routerLink]="['/menu/register']" 
           type="submit" color="danger" 
            expand="block" shape="round">Registrarse
     </ion-button>

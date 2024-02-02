@@ -11,7 +11,6 @@ export class HomePage {
   event_list: any;
   category_list:any;
 
-// colocar aca el vector
 
 // metodo predeterminado de las clases, en el se crean unos parametros
   constructor( private router: Router,
@@ -37,13 +36,13 @@ export class HomePage {
                    console.log('Categorías desde el servidor', this.category_list);
                  }              
                );
-              /*    // categoría por ID
-    const categoryId = '1'; 
+   // categoría por ID
+    const categoryId = 1; 
     this.events.getCategoryId(categoryId).then(
-      (cat) => {
-        console.log('Categoría específica por ID', cat);
+      (category) => {
+        console.log('Categoría específica por ID', category);
       }
-    );*/
+    );
 
        
               }
